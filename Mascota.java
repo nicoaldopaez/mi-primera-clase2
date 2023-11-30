@@ -26,11 +26,16 @@ public class Mascota{
     }
 
     public void setKilos(int nuevoPeso){
-        kilos = nuevoPeso;
+        kilos += nuevoPeso;
     }
 
     public void setEstado(){
-        dormido = true;
+        if(!dormido){
+            dormido = true;
+        }
+        else{
+            dormido = false; 
+        }
     }
 
     public void imprimirEstado(){
@@ -41,7 +46,7 @@ public class Mascota{
         else{
             estado = "si";
         }
-        System.out.println("Nombre:"+nombre+"|"+"Peso:"+kilos+"|"+"Dormido:"+estado);
+        System.out.println("Nombre:"+" "+nombre+" | "+"Peso:"+" "+kilos+" | "+"Dormido:"+" "+estado);
     }
 
     public String getDetalles(){
@@ -52,7 +57,7 @@ public class Mascota{
         else{
             estado = "si";
         }
-        String detalles = "Nombre:"+nombre+"|"+"Peso:"+kilos+"|"+"Dormido:"+estado;
+        String detalles = "Nombre:" +nombre+" | "+"Peso:" +kilos+" | "+"Dormido:" +estado;
         
         return detalles;
     }
